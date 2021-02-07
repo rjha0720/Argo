@@ -1,0 +1,4 @@
+language: minimal
+dist: bionic
+script: echo "script"
+
