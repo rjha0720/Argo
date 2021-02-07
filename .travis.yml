@@ -18,5 +18,4 @@ before_install:
   - gcloud container clusters get-credentials cluster-1 --project=red-forklift-301112 --zone=us-central1-c
 install: skip
 script:
-  - echo "### Deploy manifests"
   - kubectl apply -f k8s

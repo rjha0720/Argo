@@ -5,7 +5,7 @@ metadata:
   labels:
     app: app-1
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: app-1
@@ -17,6 +17,10 @@ spec:
       containers:
       - name: apache
         image: bitnami/apache:latest
+        livenessProbe:
+          httpGet:
+            path: /
+            port: apache
         ports:
         - name: apache
           containerPort: 8080
@@ -34,6 +38,9 @@ spec:
         - name: config
           mountPath: /app/index.html
           subPath: index.html
+        - name: config
+          mountPath: /app/another.html
+          subPath: another.html
       - name: apache-exporter
         args: 
         - --scrape_uri=http://localhost:8080/server-status/?auto

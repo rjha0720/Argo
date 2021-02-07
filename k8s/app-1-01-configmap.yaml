@@ -35,3 +35,10 @@ data:
     Hello World!
     </body>
     </html>
+
+  another.html: |+
+    <html>
+    <body>
+    Hello World Another!
+    </body>
+  
