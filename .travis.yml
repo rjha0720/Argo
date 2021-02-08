@@ -1,21 +1,6 @@
 language: minimal
 dist: bionic
 if: branch = master
-before_install:
-  - echo "### Decrypt service account key"
-  - openssl aes-256-cbc -K $encrypted_952741eb91b6_key -iv $encrypted_952741eb91b6_iv -in red-forklift-301112-beb3e4b8997c.json.enc -out red-forklift-301112-beb3e4b8997c.json -d
-  - echo "### Install Google Cloud SDK"
-  - echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-  - sudo apt-get install apt-transport-https ca-certificates gnupg
-  - curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-  - sudo apt-get update && sudo apt-get install google-cloud-sdk
-  - echo "### Authenticate Google Cloud SDK"
-  - gcloud auth activate-service-account travis@red-forklift-301112.iam.gserviceaccount.com --key-file=red-forklift-301112-beb3e4b8997c.json
-  - echo "### Install kubectl"
-  - curl -LO https://dl.k8s.io/release/v1.17.0/bin/linux/amd64/kubectl
-  - sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-  - echo "### Authenticate kubectl"
-  - gcloud container clusters get-credentials cluster-1 --project=red-forklift-301112 --zone=us-central1-c
 install: skip
 script:
-  - kubectl apply -f k8s
+- sh script.sh
