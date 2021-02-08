@@ -6,14 +6,10 @@ metadata:
   name: app-1
 spec:
   ports:
-  - name: apache
+  - name: http
     port: 80
     protocol: TCP
-    targetPort: apache
-  - name: prometheus
-    port: 9117
-    protocol: TCP
-    targetPort: prometheus
+    targetPort: node
   selector:
     app: app-1
 
