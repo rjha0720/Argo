@@ -1,0 +1,22 @@
+{
+  "name": "hello-argo-rollouts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larkintuckerllc/hello-argo-rollouts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larkintuckerllc/hello-argo-rollouts/issues"
+  },
+  "homepage": "https://github.com/larkintuckerllc/hello-argo-rollouts#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
