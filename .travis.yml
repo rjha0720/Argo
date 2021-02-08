@@ -3,6 +3,7 @@ dist: bionic
 if: branch = master
 before_install:
 - echo "### Authenticate Docker"
+- docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
 install: skip
 script:
 - sh script.sh
