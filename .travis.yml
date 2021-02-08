@@ -1,6 +1,8 @@
 language: generic
 dist: bionic
 if: branch = master
+before_install:
+- echo "### Authenticate Docker"
 install: skip
 script:
 - sh script.sh
