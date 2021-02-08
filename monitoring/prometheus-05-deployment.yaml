@@ -30,9 +30,6 @@ spec:
           subPath: prometheus.yml
         - name: data-volume
           mountPath: /data
-        volumeMounts:
-        - name: data-volume
-          mountPath: /data
       serviceAccountName: prometheus
       volumes:
        - name: config
