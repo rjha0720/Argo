@@ -16,7 +16,7 @@ const app = express();
 
 app.get('/', async (req, res) => {
   requests.inc();
-  res.send('Hello World!');
+  res.send('Hello World 2!');
 });
 
 app.get('/metrics', async (req, res) => {
