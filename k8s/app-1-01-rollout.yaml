@@ -21,13 +21,13 @@ spec:
           value: app-1
       steps:
       - setWeight: 20
-      - pause: {duration: 10m}
+      - pause: {duration: 10}
       - setWeight: 40
-      - pause: {duration: 10m}
+      - pause: {duration: 10}
       - setWeight: 60
-      - pause: {duration: 10m}
+      - pause: {duration: 10}
       - setWeight: 80
-      - pause: {duration: 10m}
+      - pause: {duration: 10}
   template:
     metadata:
       labels:
