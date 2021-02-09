@@ -12,15 +12,22 @@ spec:
       app: app-1
   strategy:
     canary:
+      analysis:
+        templates:
+        - templateName: not-found-percentage
+        startingStep: 2
+        args:
+        - name: service-name
+          value: app-1
       steps:
       - setWeight: 20
-      - pause: {}
+      - pause: {duration: 10m}
       - setWeight: 40
-      - pause: {duration: 10}
+      - pause: {duration: 10m}
       - setWeight: 60
-      - pause: {duration: 10}
+      - pause: {duration: 10m}
       - setWeight: 80
-      - pause: {duration: 10}
+      - pause: {duration: 10m}
   template:
     metadata:
       labels:
