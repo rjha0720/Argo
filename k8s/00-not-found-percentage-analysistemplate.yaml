@@ -14,7 +14,7 @@ spec:
       prometheus:
         address: http://prometheus.monitoring:9090
         query: |
-          avg(rate(app_1_not_founds_total{kubernetes_namespace="default", kubernetes_name="app-1"}[$__interval])) /
-          avg(rate(app_1_requests_total{kubernetes_namespace="default", kubernetes_name="app-1"}[$__interval])) > 0 or
-          avg(rate(app_1_requests_total{kubernetes_namespace="default", kubernetes_name="app-1"}[$__interval]))
+          avg(rate(app_1_not_founds_total{kubernetes_namespace="default", kubernetes_name="app-1"}[5m])) /
+          avg(rate(app_1_requests_total{kubernetes_namespace="default", kubernetes_name="app-1"}[5m])) > 0 or
+          avg(rate(app_1_requests_total{kubernetes_namespace="default", kubernetes_name="app-1"}[5m]))
 
