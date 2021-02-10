@@ -5,17 +5,18 @@ const PORT = 3000;
 const register = client.register;
 client.collectDefaultMetrics({ register });
 const requests  = new client.Counter({
-  name: 'app_1_requests_total',
-  help: 'Current total app-1 requests',
+  name: 'app_requests_total',
+  help: 'Current total app requests',
 });
 const notFound = new client.Counter({
-  name: 'app_1_not_founds_total',
-  help: 'Current total app-1 not founds',
+  name: 'app_not_founds_total',
+  help: 'Current total app not founds',
 });
 const app = express();
 
 app.get('/', async (req, res) => {
   requests.inc();
+  notFound.inc();
   res.send('Hello World 2!');
 });
 
