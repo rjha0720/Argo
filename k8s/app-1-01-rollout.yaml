@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: sckmkny/app-1:0.3.0
+        image: IMAGE
         ports:
         - name: node
           containerPort: 3000
