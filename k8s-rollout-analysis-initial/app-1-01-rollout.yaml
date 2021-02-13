@@ -28,7 +28,6 @@ spec:
     spec:
       containers:
       - name: node
-        imagePullPolicy: Always
         image: sckmkny/app-1:0.2.0
         ports:
         - name: node
