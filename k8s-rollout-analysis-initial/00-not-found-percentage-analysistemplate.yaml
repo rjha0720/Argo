@@ -8,7 +8,6 @@ spec:
   metrics:
   - name: not-found-percentage
     successCondition: result[0] <= 0.10
-    failureLimit: 1
     provider:
       prometheus:
         address: http://prometheus.monitoring:9090
