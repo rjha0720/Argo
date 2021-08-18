@@ -1,4 +1,4 @@
-FROM node:14.15.4
+FROM node:fermium-stretch
 EXPOSE 3000
 ENV NODE_ENV=production
 WORKDIR /app
